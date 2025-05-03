@@ -6,18 +6,18 @@ services:
     # ports:
     #   - 3000:3000
     # volumes:
-    #   - "/home/opc/ettihContent/labs:/ettihData/labs:rw"
-    #   - "/home/opc/ettihContent/tipizate:/ettihData/tipizate:rw"
-    #   - "/home/opc/ettihContent/blog:/ettihData/blog:rw"
+    #   - "/home/opc/beeMonitorContent/labs:/beeMonitorData/labs:rw"
+    #   - "/home/opc/beeMonitorContent/tipizate:/beeMonitorData/tipizate:rw"
+    #   - "/home/opc/beeMonitorContent/blog:/beeMonitorData/blog:rw"
     #   - "./.env:/app/.env"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.ettih.rule=Host(`beemonitor.blitzcloud.me`)"
-      - "traefik.http.routers.ettih.entrypoints=https"
-      - "traefik.http.routers.ettih.tls=true"
-      - "traefik.http.services.ettih.loadbalancer.server.port=8030"
+      - "traefik.http.routers.beeMonitor.rule=Host(`beemonitor.blitzcloud.me`)"
+      - "traefik.http.routers.beeMonitor.entrypoints=https"
+      - "traefik.http.routers.beeMonitor.tls=true"
+      - "traefik.http.services.beeMonitor.loadbalancer.server.port=8030"
       #Define midleware
-      - "traefik.http.routers.ettih.middlewares=my-traefikBouncer@file,my-cloudflarewarp@file"
+      - "traefik.http.routers.beeMonitor.middlewares=my-traefikBouncer@file,my-cloudflarewarp@file"
     networks:
       - proxy
     restart: always
