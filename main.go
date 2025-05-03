@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"log"
-	"time"
 
 	"github.com/davecgh/go-spew/spew"
 	"github.com/gofiber/fiber/v2"
@@ -27,8 +26,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	defer cancel()
+	ctx := context.Background()
 	err = client.Connect(ctx)
 	if err != nil {
 		log.Fatal(err)
