@@ -1,5 +1,5 @@
 # Building the binary of the App
-FROM golang:1.23.3 AS build
+FROM golang:1.24.2 AS build
 
 # setting the workdir
 WORKDIR /go/src/build
